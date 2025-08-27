@@ -1,0 +1,18 @@
+body{
+background-color: grey;
+
+}
+
+h2{
+text-align: center;
+}
+
+#name{
+text-align: center;
+}
+
+.button{
+    margin: 20px;
+    text-align: center;
+    padding-right: 38px;
+}
