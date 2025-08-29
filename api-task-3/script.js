@@ -9,14 +9,14 @@ async function loadPosts() {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     allPosts = await response.json();
-    renderPage(currentPage);
+    loadPage(currentPage);
     createPaginationControls();
   } catch {
     postsContainer.innerHTML = "<p>Failed to load posts.</p>";
   }
 }
 
-function renderPage(page) {
+function loadPage(page) {
   postsContainer.innerHTML = '';
   allPosts.slice((page-1)*postsPerPage, page*postsPerPage)
           .forEach(post => {
@@ -36,7 +36,7 @@ function createPaginationControls() {
     if(i === currentPage) button.style.backgroundColor = 'blue';
     button.addEventListener('click', () => {
       currentPage = i;
-      renderPage(currentPage);
+      loadPage(currentPage);
       createPaginationControls();
     });
     paginationContainer.appendChild(button);
