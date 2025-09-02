@@ -1,9 +1,11 @@
 
   const postsContainer = document.getElementById('posts');
 
-  fetch('https://jsonplaceholder.typicode.com/posts')
+  fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
     .then(response => response.json())
     .then(data => {
+      console.log(data);
+      
       
       const firstTenPosts = data.slice(0, 10);
       

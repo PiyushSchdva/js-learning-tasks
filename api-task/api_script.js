@@ -2,8 +2,10 @@ const postsContainer = document.getElementById('posts');
 
 async function loadPosts() {
   try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10');
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     const data = await response.json();
+    console.log(data);
+    
 
     data.forEach(post => {
       const postDiv = document.createElement('div');
